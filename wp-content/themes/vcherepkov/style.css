@@ -3806,6 +3806,13 @@ html {
   padding: 0;
   list-style: none; }
 
+div::selection, h1::selection, h2::selection, h3::selection, h4::selection, h5::selection, h6::selection, p::selection, span::selection, i::selection, br::selection, time::selection, a::selection, footer::selection, header::selection, main::selection, form::selection, input::selection, small::selection, ul::selection, li::selection {
+  color: #ffeeff;
+  background-color: #660066; }
+
+img::selection {
+  background-color: rgba(200, 0, 180, 0.2); }
+
 html, body {
   height: 100%; }
 
@@ -3815,6 +3822,10 @@ body {
   color: #b266b2;
   display: flex;
   flex-direction: column; }
+  @media (max-width: 575px) {
+    body .p-0 {
+      padding-left: 0;
+      padding-right: 0; } }
 
 h1, h2, h3, h4, h5, h6 {
   font-family: 'Montserrat', sans-serif; }
@@ -3907,10 +3918,10 @@ a {
     .post__footer span {
       display: inline-block;
       margin: 0 1rem 0.5rem 0;
-      white-space: nowrap;
-      transition: color 0.3s; }
-      .post__footer span:hover {
-        color: #f7c2f7; }
+      white-space: nowrap; }
+    .post__footer a:hover {
+      color: #f7c2f7;
+      text-decoration: none; }
 
 .footer {
   padding-top: 1rem;
@@ -3950,6 +3961,13 @@ a {
       color: #f7c2f7; }
     .form-search__input::placeholder {
       color: #f7c2f7; }
+    .form-search__input::-webkit-search-cancel-button {
+      -webkit-appearance: none;
+      width: 10px;
+      height: 10px;
+      border-radius: 5px;
+      background: red;
+      cursor: pointer; }
   .form-search__submit {
     color: #b266b2;
     background-color: #f7c2f7;
@@ -3969,5 +3987,34 @@ a {
     width: 80px;
     border-top-left-radius: 0;
     border-bottom-left-radius: 0; } }
+/*** 404.php ***/
+.h404 {
+  font-size: 100px;
+  color: #ce0418; }
+
+.p404 {
+  font-size: 40px;
+  color: #ce0418; }
+
+/*** search ***/
+.search__query {
+  font-size: 24px;
+  background-color: #f7c2f7;
+  color: #660066;
+  display: inline-block;
+  padding: 5px 10px; }
+
+/*** single ***/
+.posts-nav {
+  padding: 1rem;
+  margin-bottom: 1rem;
+  background: #ffeeff;
+  border-radius: 5px;
+  display: flex;
+  justify-content: space-between; }
+  .posts-nav__right {
+    margin-left: auto; }
+  .posts-nav a {
+    font-size: 24px; }
 
 /*# sourceMappingURL=style.css.map */

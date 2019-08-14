@@ -8,7 +8,7 @@
 	<?php wp_head() ?>
 </head>
 <body>
-	<div class="container">
+	<div class="container p-0">
 		<header class="header">
 			<a href="<?php echo home_url() ?>" class="header__home" title="Go Home">
 				<i class="fas fa-home fa-2x header__home-icon"></i>
@@ -24,4 +24,3 @@
 				'items_wrap'      => '<ul class = "%2$s">%3$s</ul>',
 			) ); ?>
 		</header>
-		<main class="main">

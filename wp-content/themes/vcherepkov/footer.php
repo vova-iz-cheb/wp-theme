@@ -57,8 +57,8 @@
 				</ul>
 			</div>
 			<div class="col-12">
-				<form action="" class="form-search" method="get" >
-					<input type="text" class="form-search__input" placeholder="Search..." name="s">
+				<form action="<?php echo site_url() ?>" class="form-search" method="get" >
+					<input type="search" class="form-search__input" placeholder="Search..." name="s">
 					<input type="submit" class="form-search__submit" value="Search">
 				</form>
 			</div>

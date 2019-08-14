@@ -14,6 +14,16 @@
 	list-style: none;
 }
 
+div,h1,h2,h3,h4,h5,h6,p,span,i,br,time,a,footer,header,main,form,input,small,ul,li {
+	&::selection {
+		color: $light;
+		background-color: $dark;
+	}
+}
+img::selection {
+	background-color: rgba(200,0,180,.2);
+}
+
 html, body {
 	height: 100%;
 }
@@ -24,6 +34,12 @@ body {
 	color: $primary;
 	display: flex; // 1) прижать footer к низу экрана
 	flex-direction: column;
+	.p-0 {
+		@media(max-width: 575px) {
+			padding-left: 0;
+			padding-right: 0;
+		}
+	}
 }
 
 h1, h2, h3, h4, h5, h6 {
@@ -156,10 +172,10 @@ a {
 			display: inline-block;
 			margin: 0 1rem 0.5rem 0;
 			white-space: nowrap;
-			transition: color 0.3s;
-			&:hover {
-				color: $hover;
-			}
+		}
+		a:hover {
+			color: $hover;
+			text-decoration: none;
 		}
 	}
 }
@@ -207,6 +223,14 @@ a {
 		&:-ms-input-placeholder { color: $hover; }
 		&::-ms-input-placeholder { color: $hover; }
 		&::placeholder { color: $hover; }
+		&::-webkit-search-cancel-button {
+			-webkit-appearance: none;
+			width: 10px;
+			height: 10px;
+			border-radius: 5px;
+			background: red;
+			cursor: pointer;
+		}
 	}
 	&__submit {
 		color: $primary;
@@ -233,5 +257,43 @@ a {
 			border-top-left-radius: 0;
 			border-bottom-left-radius: 0;
 		}
+	}
+}
+
+/*** 404.php ***/
+.h404 {
+	font-size: 100px;
+	color: #ce0418;
+}
+.p404 {
+	font-size: 40px;
+	color: #ce0418;
+}
+
+/*** search ***/
+.search__query {
+	font-size: 24px;
+	background-color: $hover;
+	color: $dark;
+	display: inline-block;
+	padding: 5px 10px;
+}
+
+/*** single ***/
+.posts-nav {
+	padding: 1rem;
+	margin-bottom: 1rem;
+	background: $light;
+	border-radius: 5px;	
+
+	display: flex;
+	justify-content: space-between;
+
+	&__right {
+		margin-left: auto;
+	}
+
+	a {
+		font-size: 24px;
 	}
 }

@@ -14,7 +14,7 @@ function theme_add_scripts() {
 //регистрируем главное меню сайта
 register_nav_menu( 'main-menu', 'Main menu of the site' );
 
-//классы для всех анкоров в главном меню
+//filter классы для всех анкоров в главном меню
 function add_class_to_all_menu_anchors( $atts ) {
     $atts['class'] = 'nav__link';
     return $atts;
