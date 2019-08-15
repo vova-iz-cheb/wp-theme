@@ -23,34 +23,11 @@
           ) ?>
       </span>
       <?php 
-        $cats_list = get_the_category_list(', ');
-        if( $cats_list ) { // если есть хотя бы одна рубрика
-          printf(
-            '<span><i class="far fa-folder"></i> %s</span>',
-            $cats_list
-          );
-        }
-
-        $tags_list = get_the_tag_list('', ', ');
-        if( $tags_list ) { // если есть хотя бы один тэг
-          printf(
-            '<span><i class="fas fa-tag"></i> %1$s</span>',
-            $tags_list
-          );
-        }
-
-        // если есть права редактировать пост
+        // если есть права редактировать пост/
         edit_post_link('Редактировать', "<span><i class='far fa-edit'></i> ", "</span>");
-
       ?>
     </footer>
   </article>
-  <div class="posts-nav">
-    <?php
-      previous_post_link('<span class="posts-nav__left">%link</span>', '<i class="fas fa-arrow-circle-left"></i> %title');
-      next_post_link('<span class="posts-nav__right">%link</span>', '%title <i class="fas fa-arrow-circle-right"></i>');
-    ?>
-  </div>
 
   <?php 
     if ( comments_open() || get_comments_number() ) {

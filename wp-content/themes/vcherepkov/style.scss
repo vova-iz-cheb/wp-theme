@@ -13,8 +13,19 @@
 	padding: 0;
 	list-style: none;
 }
+%button {
+	display: inline-block;
+	text-align: center;
+	border: 1px solid transparent;
+	border-radius: 5px;
+	padding: 0.5rem 1rem;
+	user-select: none;
+	cursor: pointer;
+	text-decoration: none;
+	transition: all .3s;
+}
 
-div,h1,h2,h3,h4,h5,h6,p,span,i,br,time,a,footer,header,main,form,input,small,ul,li {
+label,div,h1,h2,h3,h4,h5,h6,p,span,i,br,time,a,footer,header,main,form,input,small,ul,li,cite,strong {
 	&::selection {
 		color: $light;
 		background-color: $dark;
@@ -295,5 +306,91 @@ a {
 
 	a {
 		font-size: 24px;
+	}
+}
+
+/*** comments ***/
+.comments {
+	ol {
+		list-style-type: none;
+		counter-reset: num;
+		li {
+			position: relative;
+		}
+		li::before {
+			content: counter(num);
+			counter-increment: num;
+			position: absolute;
+			display: block;
+			width: 30px;
+			height: 30px;
+			background-color: $dark;
+			color: #fff;
+			text-align: center;
+			line-height: 25px;
+		}
+	}
+	&__header {
+		margin-bottom: 1rem;
+	}
+	.even {
+		background: $light;
+		ol {
+			background: #fff;
+		}
+	}
+	.comment-list {
+		padding: 0;
+	}
+	.comment-body {
+		padding: 0.5rem 0.5rem 0.5rem 1.5rem;
+		border-bottom: 2px solid $dark;
+	}
+	.fn {
+		font-weight: bold;
+	}
+	.comment-reply-link, .comment-edit-link, .submit {
+		@extend %button;
+		color: #fff;
+		background: $link;
+		&:hover {
+			background: $dark;
+		}
+	}
+	label {
+		display: block;
+		user-select: none;
+	}
+	input[type='checkbox'] + label {
+		display: inline-block;
+		margin-left: 10px;
+	}
+	.comment-notes {
+		color: #E72E2E;
+		font-weight: bold;
+	}
+	textarea, input[type='text'] {
+		font-family: inherit;
+		font-size: inherit;
+		line-height: inherit;
+		color: inherit;
+		padding: 5px 5px 5px 12px;
+		max-width: 100%;
+		outline: none;
+		border-radius: 5px;
+		border: 1px solid $primary;
+		transition: box-shadow .3s;
+		&:focus {
+			box-shadow: 0 0 1px 1px $primary;
+		}
+	}
+	#cancel-comment-reply-link {
+		@extend %button;
+		padding: 5px 10px;
+		color: #fff;
+		background: #E72E2E;
+		&:hover {
+			background: #9E0404;
+		}
 	}
 }

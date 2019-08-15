@@ -7,5 +7,9 @@ $(function() {
   	//высота nav становится высоте прокрутки блоки
   	if(nav.style.maxHeight) nav.style.maxHeight = null;
   	else nav.style.maxHeight = height + 'px';
-  })
+  });
+
+  if( $('.comment-edit-link').length ) {
+  	$('.comment-edit-link').text('Изменить');
+  }
 });
