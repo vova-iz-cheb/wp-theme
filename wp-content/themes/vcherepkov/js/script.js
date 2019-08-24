@@ -12,4 +12,16 @@ $(function() {
   if( $('.comment-edit-link').length ) {
   	$('.comment-edit-link').text('Изменить');
   }
+
+  if( $('.reg__button').length ) {
+    $('.reg__button').click(function() {
+      $('body').addClass('overflow-h');
+      $('.bg-dark').show();
+    });
+
+    $('.reg__close').click(function() {
+      $('body').removeClass('overflow-h');
+      $('.bg-dark').hide();
+    });
+  }
 });
